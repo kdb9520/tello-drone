@@ -17,7 +17,6 @@ def main(FSPEED=11.7, ASPEED=36, INTERVAL=0.25):
     run_loop(dInterval, aInterval, x, y, a, yaw, me, points)
 
 
-
 def init_values(FSPEED, ASPEED, INTERVAL):
     dInterval = FSPEED * INTERVAL
     aInterval = ASPEED * INTERVAL
@@ -97,6 +96,7 @@ def drawPoints(img, points):
     cv2.putText(img, f'({(points[-1][0] - 500) / 100}, {(points[-1][1] - 500) / 100})m',
                 (points[-1][0] + 10, points[-1][1] + 30), cv2.FONT_HERSHEY_PLAIN, 1,
                 (255, 0, 255), 1)
+
 
 def run_loop(dInterval, aInterval, x, y, a, yaw, me, points):
     while True:
